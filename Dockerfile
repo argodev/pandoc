@@ -1,15 +1,20 @@
 FROM ubuntu:latest
+LABEL maintainer='Rob Gillen <argodev+pandoc@gmail.com>'
 
+# install required packages
 RUN apt-get -q --no-allow-insecure-repositories update \
   && DEBIAN_FRONTEND=noninteractive \
     apt-get install --assume-yes --no-install-recommends \
         texlive-full \
-        pandoc
-        # \
-        #ttf-ubuntu-font-family
+        pandoc \
+        python3-pip \
+  && rm -rf /var/lib/apt/lists/        
 
-RUN apt-get install python3-pip --assume-yes
+# install required python packages
 RUN python3 -m pip install pandoc-latex-environment 
 
+# set the entrypoint
+ENTRYPOINT ["/usr/bin/pandoc"]
 
-# TODO clean up after apt gets
+# set the workdir
+WORKDIR /data
