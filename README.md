@@ -38,6 +38,12 @@ like the following:
 alias pandoc='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) argodev/pandoc'
 ```
 
+## Change Log
+
+- 2023-01-25
+    - Updating to use GitHub actions to build
+    - Building/deploying multi-architecture images
+
 
 
 ## Helpful Links
