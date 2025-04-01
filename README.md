@@ -40,6 +40,8 @@ alias pandoc='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) argodev/pan
 
 ## Change Log
 
+- 2025-04-01
+    - updating to utilize more-recent version of `pandoc`
 - 2023-01-25
     - Updating to use GitHub actions to build
     - Building/deploying multi-architecture images
