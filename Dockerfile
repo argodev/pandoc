@@ -11,7 +11,7 @@ RUN apt-get -q --no-allow-insecure-repositories update \
   && rm -rf /var/lib/apt/lists/        
 
 # install required python packages
-RUN python3 -m pip --break-system-packages install pandoc-latex-environment
+RUN python3 -m pip install pandoc-latex-environment --break-system-packages 
 
 # set the entrypoint
 ENTRYPOINT ["/usr/bin/pandoc"]
